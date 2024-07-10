@@ -3,27 +3,6 @@ import { toast } from '../../utils/toast';
 import { Task } from '../../types/Task';
 
 const initialState: Task[] = [
-  {
-    id: 1,
-    title: 'Buy groceries',
-    description: 'Milk, Bread, Cheese, Eggs, Vegetables',
-    dueDate: '2024-07-15',
-    completed: false,
-  },
-  {
-    id: 2,
-    title: 'Meeting with team',
-    description: 'Discuss project milestones and deadlines',
-    dueDate: '2024-07-10',
-    completed: false,
-  },
-  {
-    id: 3,
-    title: 'Dentist appointment',
-    description: 'Routine check-up',
-    dueDate: '2024-07-12',
-    completed: true,
-  },
 ];
 
 const tasksSlice = createSlice({
