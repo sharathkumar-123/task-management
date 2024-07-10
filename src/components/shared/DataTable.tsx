@@ -12,7 +12,6 @@ import {
   IconButton,
   Switch,
   Typography,
-  Tooltip,
 } from '@mui/material';
 import { Task } from '../../types/Task';
 import EditIcon from '@mui/icons-material/Edit';

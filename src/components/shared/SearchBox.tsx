@@ -3,8 +3,6 @@ import { InputAdornment, TextField, IconButton, TextFieldProps } from "@mui/mate
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 
-
-
 const SearchBox: FC<any> = ({ onClear, ...props }) => {
   const [showClearIcon, setShowClearIcon] = useState(false);
 

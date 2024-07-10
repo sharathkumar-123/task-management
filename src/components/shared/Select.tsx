@@ -1,19 +1,18 @@
-// components/FormSelect.tsx
 import React from 'react';
-import { Controller, FieldValues } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import { Select as MuiSelect, MenuItem, InputLabel, FormControl, Typography } from '@mui/material';
 
-interface FormSelectProps<T> {
+interface FormSelectProps {
     name: string;
     control: any; 
     label: string;
     error?: boolean;
     helperText?: string;
     options: { value: string; label: string }[];
-    isReadOnly?:boolean
+    isReadOnly?: boolean;
 }
 
-function Select<T extends FieldValues>({
+function Select({
     name,
     control,
     label,
@@ -21,7 +20,7 @@ function Select<T extends FieldValues>({
     helperText,
     options,
     isReadOnly
-}: FormSelectProps<T>) {
+}: FormSelectProps) {
     return (
         <Controller
             name={name}

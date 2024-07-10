@@ -1,5 +1,7 @@
 import { FilterConfig } from "../types/Task";
 
+export const ROWS_PER_PAGE = 5;
+
 export const statusOptions = [
     { value: 'pending', label: 'Pending' },
     { value: 'completed', label: 'Completed' },

@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../constants/routes";
 import { Task } from "../types/Task";
 import Header from '../components/Header';
-import { filterConfigs } from '../constants';
+import { ROWS_PER_PAGE, filterConfigs } from '../constants';
 import { searchTasks, filterTasks, sortTasks } from '../utils';
 
 const columns: Column[] = [
@@ -52,7 +52,6 @@ const TaskListPage: React.FC = (): ReactElement => {
   const navigate = useNavigate();
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
   const [sortBy, setSortBy] = useState<keyof Task | null>('title');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [openFilterDialog, setOpenFilterDialog] = useState(false);
@@ -66,7 +65,7 @@ const TaskListPage: React.FC = (): ReactElement => {
   const sortedTasks = sortTasks(filteredTasks, sortBy, sortOrder);
 
   // Compute paginated tasks
-  const paginatedTasks = sortedTasks.slice(currentPage * rowsPerPage, currentPage * rowsPerPage + rowsPerPage);
+  const paginatedTasks = sortedTasks.slice(currentPage * ROWS_PER_PAGE, currentPage * ROWS_PER_PAGE + ROWS_PER_PAGE);
 
   const handlePageChange = useCallback((newPage: number) => {
     setCurrentPage(newPage);
@@ -113,8 +112,8 @@ const TaskListPage: React.FC = (): ReactElement => {
     <Box sx={{ margin: '20px' }}>
       <Header title='Task List' />
       <Box sx={{ borderRadius: '10px', bgcolor: '#d0e5f7', padding: '20px', mt: 5 }}>
-        <Grid container alignItems="center" justifyContent="space-evenly" sx={{ mb: 2 }}>
-          <Grid item xs={12} md={4}>
+        <Grid container alignItems="center" justifyContent="space-evenly" sx={{ mb: 2}}>
+          <Grid item xs={12 }  sx={{ mb: { xs: 2, md: 0 }}} md={4}>
             <SearchBox
               variant="outlined"
               placeholder="Search tasks..."
@@ -145,7 +144,7 @@ const TaskListPage: React.FC = (): ReactElement => {
             sortOrder={sortOrder}
             onPageChange={handlePageChange}
             currentPage={currentPage}
-            rowsPerPage={rowsPerPage}
+            rowsPerPage={ROWS_PER_PAGE}
             totalCount={tasks.length}
             onSortChange={handleSortChange}
             onEdit={handleEdit}

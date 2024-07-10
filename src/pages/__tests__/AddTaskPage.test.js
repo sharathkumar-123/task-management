@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import AddTaskPage from '../AddTaskPage';
 import { addTask } from '../../store/task/tasksSlice';

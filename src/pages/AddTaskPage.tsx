@@ -122,7 +122,7 @@ const AddTaskPage: React.FC<AddTaskPageProps> = ({ initialValues, isEditFlow = f
                                             <TextareaAutosize
                                                 {...field}
                                                 aria-label="minimum height"
-                                                minRows={2.3}
+                                                minRows={2}
                                                 placeholder="Description"
                                                 disabled={isReadOnly}
                                                 style={{ width: '94%', padding: '10px',fontSize:'16px', backgroundColor: '#d0e5f7' }}
